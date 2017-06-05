@@ -6,6 +6,8 @@ const server = http.createServer((req, res) => {
   res.end();
 });
 
-server.listen(9000);
+
+const port = process.env.PORT || 8080;
+server.listen(port);
 
 module.exports = server;
