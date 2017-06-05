@@ -23,5 +23,10 @@
   "homepage": "https://github.com/danny15002/sampleChat#readme",
   "dependencies": {
     "ws": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-react": "^6.10.3"
   }
 }
