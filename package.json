@@ -1,0 +1,24 @@
+{
+  "name": "sampleChat",
+  "version": "1.0.0",
+  "description": "",
+  "engine": {
+    "node": "6.9.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danny15002/sampleChat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danny15002/sampleChat/issues"
+  },
+  "homepage": "https://github.com/danny15002/sampleChat#readme"
+}
