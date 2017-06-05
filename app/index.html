@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.onload = () => {
+        const socket  = new WebSocket(location.origin.replace('http', 'ws'));
+        socket.onmessage = console.log
+      }
+    </script>
+  </body>
+</html>
