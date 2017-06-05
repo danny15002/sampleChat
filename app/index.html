@@ -3,13 +3,73 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
+
+    <div class="container" id="app">
+      <div class="space">
+
+      </div>
+      <div class="register">
+        <div class="label">
+          Register
+        </div>
+        <input type="text" name="register-input" id="register-input" placeholder="Just type in a username">
+        <input type="button" class="button" value="Go!">
+      </div>
+    </div>
+
+
     <script type="text/javascript">
       window.onload = () => {
         const socket  = new WebSocket(location.origin.replace('http', 'ws'));
         socket.onmessage = console.log
       }
     </script>
+
+    <style media="screen">
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        height: 100vh;
+      }
+
+      .space {
+        height: 25%;
+        width: 100%;
+      }
+
+      .register * {
+        margin: auto;
+        display: block;
+        width: 30%;
+        min-width: 300px;
+        font-size: 1.1em;
+      }
+
+      .register .label {
+        padding-bottom: 20px;
+      }
+
+      .register input {
+        border: lightgray 1px solid;
+        padding: 3px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      .register .button {
+        background: white;
+        border-radius: 4px;
+      }
+
+    </style>
   </body>
 </html>
