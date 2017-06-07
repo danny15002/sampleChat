@@ -66,6 +66,7 @@
         console.info('ATTEMPTING TO REGISTER');
         const username = document.getElementById('register-input').value;
         const registrationData = {
+          name: socketInfo.name,
           username: username,
           action: 'REGISTER'
         }
@@ -76,6 +77,10 @@
         console.log('RECEIVED SOCKET MESSAGE', message);
         const payload = JSON.parse(message.data)
         switch (payload.action) {
+          case 'CONNECTED':
+            window.socketInfo = {};
+            socketInfo.name = payload.name;
+            break;
           case 'REGISTER':
             window.username = payload.username;
             loadApp(payload.users);
@@ -110,7 +115,8 @@
       function sendMessage() {
         if (userTo === undefined) return;
         const payload = {
-          action: 'MESSAGE',
+          name: socketInfo.name,
+          action: 'SEND_MESSAGE',
           userFrom: window.username,
           userTo: window.userTo,
           message: window.messageText.value
