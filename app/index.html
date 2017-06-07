@@ -74,8 +74,9 @@
       }
 
       function socketListener(message) {
+        const payload = JSON.parse(message.data);
+        console.log('Time to send: ', (new Date()) - (new Date(payload.timeSent)));
         console.log('RECEIVED SOCKET MESSAGE', message);
-        const payload = JSON.parse(message.data)
         switch (payload.action) {
           case 'CONNECTED':
             window.socketInfo = {};
@@ -119,7 +120,8 @@
           action: 'SEND_MESSAGE',
           userFrom: window.username,
           userTo: window.userTo,
-          message: window.messageText.value
+          message: window.messageText.value,
+          timeSent: (new Date()).toISOString()
         }
         console.log('sending message', payload);
         socket.send(JSON.stringify(payload));

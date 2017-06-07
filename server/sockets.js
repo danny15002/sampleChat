@@ -109,7 +109,8 @@ function handleSendMessage(payload) {
   const responsePayload = {
     action: 'MESSAGE',
     userFrom: socket.username,
-    message: payload.message
+    message: payload.message,
+    timeSent: payload.timeSent
   };
 
   socket.send(JSON.stringify(responsePayload));
