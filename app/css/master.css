@@ -138,3 +138,8 @@ body {
   font-size: 1.1em;
   border: solid 1px black;
 }
+
+li.active {
+  background: black;
+  color: white;
+}

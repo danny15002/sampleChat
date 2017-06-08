@@ -80,7 +80,7 @@ function handleRegister(payload) {
   users[socket.username] = socket;
 
   const response = {
-    action: 'REGISTER',
+    action: 'REGISTERED',
     message: 'registered successfully',
     username: socket.username,
     users: Object.keys(users)
@@ -105,9 +105,9 @@ function validateUsername(username) {
  * @param {Object} payload - an object with attributes: action, payload
  */
 function handleSendMessage(payload) {
-  const socket = connections[payload.name];
+  const socket = users[payload.userTo];
   const responsePayload = {
-    action: 'MESSAGE',
+    action: 'RECEIVED_MESSAGE',
     userFrom: socket.username,
     message: payload.message,
     timeSent: payload.timeSent
